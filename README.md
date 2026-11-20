@@ -4,6 +4,10 @@ An end-to-end data analytics project that compares Formula 1 drivers on pace, se
 
 ---
 
+## ⚡ At a Glance
+
+| | |
+|---|---|
 | **Question** | Which driver is faster, where do they gain time, and who is most consistent? |
 | **Race analysed** | São Paulo GP 2026 (built on Monza 2025, switchable to any race) |
 | **Data size** | ~20 drivers and ~1,000 laps per race |
@@ -181,8 +185,12 @@ f1-driver-comparison/
 - That Power BI only sees changes after a Refresh, and that slicer selections can hide data until cleared.
 - How to turn raw numbers into a dashboard that answers a clear question.
 
+---
+
 ## 🙏 Credits and Disclaimer
 
 Data from the OpenF1 API. Track outline generated from the open f1-circuits dataset. This is an unofficial, educational project, not affiliated with or endorsed by Formula 1, the FIA or any team. F1, Formula 1 and related marks belong to their owners.
 
-Darshan Upadhye.
+## 👤 Author
+
+Darshan Upadhye
