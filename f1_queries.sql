@@ -22,13 +22,12 @@ CREATE TABLE laps (
 );
 
 -- clean laps only: no lap 1, no pit-out laps, no slow in/safety laps
-CREATE VIEW v_laps AS
+CREATE OR REPLACE VIEW f1_compare.v_laps AS
 SELECT d.full_name, d.acronym, d.team_name, l.*
-FROM laps l JOIN drivers d USING (driver_number)
-WHERE l.lap_time IS NOT NULL
-  AND l.lap_number > 1
-  AND l.is_pit_out = 0
-  AND l.lap_time < 92;
+FROM f1_compare.laps l JOIN f1_compare.drivers d USING (driver_number)
+WHERE l.lap_time IS NOT NULL AND l.lap_number > 1 AND l.is_pit_out = 0
+  AND l.lap_time < 1.10 * (SELECT MIN(lap_time) FROM f1_compare.laps
+                           WHERE lap_time IS NOT NULL AND lap_number > 1 AND is_pit_out = 0);
   
 SELECT acronym, MIN(lap_time) AS best_lap, MAX(top_speed) AS vmax
 FROM f1_compare.v_laps
