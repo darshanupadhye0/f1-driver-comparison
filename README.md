@@ -142,23 +142,6 @@ f1-driver-comparison/
 
 ---
 
-## 🔁 Switching to a Different Race
-
-1. In `ingest.py`, change the race:
-   ```python
-   session = get("sessions", year=2025,
-                 circuit_short_name="Silverstone", session_name="Race")[0]
-   ```
-2. Clear the old race by adding these lines right after `cur = db.cursor()`:
-   ```python
-   cur.execute("DELETE FROM laps")
-   cur.execute("DELETE FROM drivers")
-   ```
-3. Run `python ingest.py`.
-4. In Power BI: Refresh, clear the slicer with the eraser icon, and pick drivers again.
-
----
-
 ## 🔍 Key Insights
 
 - _Write what you see in your dashboard here._
